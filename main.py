@@ -1,9 +1,13 @@
+import os
 import time
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
 time.clock = time.time
+
+# Clear database - fresh train
+os.remove('db.sqlite3')
 
 # Create a new chatbot named Charlie
 chatbot = ChatBot(
@@ -17,6 +21,9 @@ chatbot = ChatBot(
         },
         {
             'import_path': 'custom_adapter.BiologyComplementaryLogicAdapter'
+        },
+        {
+            'import_path': 'custom_adapter.StandardConversationsAdapter'
         },
         {
             'import_path': 'chatterbot.logic.BestMatch',
@@ -34,6 +41,20 @@ def ask(question):
     print(f'> {question}\n{response}')
 
 
-ask('What is binary value for #010011?')
-ask('What is RGB value for #010011?')
-ask('Could you show complementary sequence for "ATG CTA AGC ATA"?')
+# ask('What is binary value for #010011?')
+# ask('What is RGB value for #010011?')
+# ask('Could you show complementary sequence for "ATG CTA AGC ATA"?')
+
+while True:
+    try:
+        # os.system('clear')
+        print("> ", end='')
+        user_input = input()
+
+        bot_response = chatbot.get_response(user_input)
+
+        print(bot_response)
+
+    # Press ctrl-c or ctrl-d on the keyboard to exit
+    except (KeyboardInterrupt, EOFError, SystemExit):
+        break
