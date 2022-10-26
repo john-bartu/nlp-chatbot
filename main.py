@@ -1,5 +1,10 @@
+import time
+
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+
+
+time.clock = time.time
 
 # Create a new chatbot named Charlie
 chatbot = ChatBot('Neo',
