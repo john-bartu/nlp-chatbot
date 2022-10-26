@@ -1,6 +1,6 @@
+import random
 import re
 import struct
-
 from abc import ABCMeta, abstractmethod
 from typing import List
 
@@ -105,3 +105,33 @@ class BiologyComplementaryLogicAdapter(MyAdapter):
         response_statement.confidence = self.calculate_confidence(text, input_statement)
 
         return response_statement
+
+
+class StandardConversationsAdapter(LogicAdapter):
+    database = [
+        [['hi', 'hello', 'cheers'], ['Welcome!', 'Bonjour!']],
+        [['fuck', 'idiot', 'kys'], ["Don't say like that!", "It's not nice", "Apologize!"]],
+        [['apologise', 'apologize', 'sorry'], ["Don't worry!", "That's okay!"]],
+    ]
+
+    def __init__(self, chatbot, **kwargs):
+        super().__init__(chatbot, **kwargs)
+        self.theme = None
+
+    def can_process(self, input_statement: Statement):
+        for i, line in enumerate(self.database):
+            self.theme = i
+            test = any(
+                keyword in [
+                    word.lower()
+                    for word in
+                    input_statement.text.split()
+                ]
+                for keyword
+                in line[0]
+            )
+            if test:
+                return True
+
+    def process(self, statement, additional_response_selection_parameters=None):
+        return Statement(text=random.choice(self.database[self.theme][1]))
