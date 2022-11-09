@@ -9,14 +9,23 @@ intents:
   - mood_unhappy
   - bot_challenge
   - weather_for_location
+  - day_of_week
+  - ask_schedule
+  - ask_schedule_for_day
 entities:
   - location
+  - day_of_week
 slots:
   location:
     type: text
     mappings:
       - type: from_entity
         entity: location
+  day_of_week:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: day_of_week
 
 responses:
   utter_greet:
@@ -41,6 +50,8 @@ responses:
 actions:
   - action_hello_world
   - action_get_weather
+  - action_get_schedule_for_day
+  - action_get_today_day_of_week
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

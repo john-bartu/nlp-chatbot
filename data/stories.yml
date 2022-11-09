@@ -35,3 +35,14 @@ stories:
       - action: utter_did_that_help
       - intent: deny
       - action: utter_goodbye
+
+  - story: pk schedule short
+    steps:
+      - intent: ask_schedule
+      - action: action_get_today_day_of_week
+      - action: action_get_schedule_for_day
+
+  - story: pk schedule
+    steps:
+      - intent: ask_schedule_for_day
+      - action: action_get_schedule_for_day

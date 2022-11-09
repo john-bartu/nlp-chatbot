@@ -1,70 +1,70 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - good morning
+      - good evening
+      - good afternoon
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
 
 - intent: mood_unhappy
   examples: |
@@ -83,30 +83,59 @@ nlu:
     - so saad
     - so sad
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
 
-- intent: weather_for_location
-  examples: |
-    - what is the weather in [A-z ]+(location)
-    - what is the weather in [A-z ]+(location)
-    - what is the weather in [London](location)
-    - weather of [A-z ]+(location)
-    - Today's weather in [A-z]+(location)
-    - [A-z]+(location) weather
-    - Tell me weather of [A-z]+(location)
-    - Can you tell me weather of [A-z]+(location) 
+  - intent: weather_for_location
+    examples: |
+      - what is the weather in [A-z ]+(location)
+      - what is the weather in [London](location)
+      - weather of [A-z ]+(location)
+      - Today's weather in [A-z]+(location)
+      - [A-z]+(location) weather
+      - Tell me weather of [A-z]+(location)
+      - Can you tell me weather of [A-z]+(location) 
 
-- intent: location
-  examples: |
-    - [New Delhi](location)
-    - [India](location)
-    - [Mumbai](location)
-    - [Noida](location)
-    - [Kolkata](location)
-    - [Bangalore](location)
-    - [London](location)
+  - intent: ask_schedule
+    examples: |
+      - what is the schedule
+      - what I have today?
+      - today lecturers
+      - when i have lectures
+
+  - intent: ask_schedule_for_day
+    examples: |
+      - what is the schedule for [Monday](day_of_week) 
+      - when lectures i have on [Tuesday](day_of_week) 
+      - what I have on [Wednesday](day_of_week)?
+      - on [Saturday](day_of_week) what do i have?
+      - on [Sunday](day_of_week) what do i have?
+
+  - intent: location
+    examples: |
+      - [New Delhi](location)
+      - [India](location)
+      - [Mumbai](location)
+      - [Noida](location)
+      - [Kolkata](location)
+      - [Bangalore](location)
+      - [London](location)
+      - [Warsaw](location)
+      - [Warszawa](location)
+      - [Cracow](location)
+      - [Kraków](location)
+      - [Czestochowa](location)
+
+  - intent: day_of_week
+    examples: |
+      - [Monday](day_of_week)
+      - [Tuesday](day_of_week)
+      - [Wednesday](day_of_week)
+      - [Thursday](day_of_week)
+      - [Friday](day_of_week)
+      - [Saturday](day_of_week)
+      - [Sunday](day_of_week)
