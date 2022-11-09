@@ -47,6 +47,26 @@ responses:
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
 
+  utter_schedule_monday:
+    - text: "7:30-9:45: PJN lecture (remote)\n10:00-12:15: AJiO lecture (remote)\n15:30-17:45: AJiO lab (remote)"
+
+  utter_
+
+  utter_schedule_tuesday:
+    - text: "17:00-19:15: PM lab"
+
+  utter_schedule_wednesday:
+    - text: "15:00-17:15: PJN lab"
+
+  utter_schedule_no_lectures:
+    - text: "no lectures yay!"
+
+  utter_schedule_friday:
+    - text: "7:30-9:45: PM lecture (remote)\n10:00-13:00: Sem. dyp. lecture (remote)"
+
+  utter_schedule_unknown_day_of_week:
+    - text: "Sorry, I don't get it, which day of week you ask?"
+
 actions:
   - action_hello_world
   - action_get_weather
