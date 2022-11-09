@@ -7,7 +7,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 time.clock = time.time
 
 # Clear database - fresh train
-os.remove('db.sqlite3')
+# os.remove('db.sqlite3')
 
 # Create a new chatbot named Charlie
 chatbot = ChatBot(
@@ -24,6 +24,9 @@ chatbot = ChatBot(
         },
         {
             'import_path': 'custom_adapter.StandardConversationsAdapter'
+        },
+        {
+            'import_path': 'custom_adapter.OutOfScopeAdapter'
         },
         {
             'import_path': 'chatterbot.logic.BestMatch',

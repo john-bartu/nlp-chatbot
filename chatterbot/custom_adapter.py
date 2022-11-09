@@ -1,9 +1,11 @@
+import json
 import random
 import re
 import struct
 from abc import ABCMeta, abstractmethod
 from typing import List
 
+import requests as requests
 from chatterbot.conversation import Statement
 from chatterbot.logic import LogicAdapter
 
@@ -135,3 +137,30 @@ class StandardConversationsAdapter(LogicAdapter):
 
     def process(self, statement, additional_response_selection_parameters=None):
         return Statement(text=random.choice(self.database[self.theme][1]))
+
+
+class OutOfScopeAdapter(LogicAdapter):
+
+    def __init__(self, chatbot, **kwargs):
+        super().__init__(chatbot, **kwargs)
+        self.theme = None
+        self.sid = '123123131'
+
+    def can_process(self, input_statement: Statement):
+        return True
+
+    def rasa(self, text: str) -> str:
+        payload = {
+            "sender": str(self.sid),
+            "message": text
+        }
+
+        try:
+            request = requests.post('http://127.0.0.1:5005/webhooks/rest/webhook',
+                                    data=json.dumps(payload))
+            return request.json()[0]['text']
+        except Exception:
+            return "rasa connection failed"
+
+    def process(self, input_statement, additional_response_selection_parameters=None):
+        return Statement(text=self.rasa(input_statement.text))
