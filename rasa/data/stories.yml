@@ -41,6 +41,10 @@ stories:
       - intent: ask_schedule
       - action: action_get_today_day_of_week
       - action: action_get_schedule_for_day
+      - action: utter_do_you_want_route
+      - intent: affirm
+      - action: action_get_route_for_day
+
 
   - story: pk schedule
     steps:

@@ -10,4 +10,4 @@ rules:
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
-  - action: action_hello_world
+  - action: utter_iamabot

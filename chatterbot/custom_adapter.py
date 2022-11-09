@@ -111,7 +111,6 @@ class BiologyComplementaryLogicAdapter(MyAdapter):
 
 class StandardConversationsAdapter(LogicAdapter):
     database = [
-        [['hi', 'hello', 'cheers'], ['Welcome!', 'Bonjour!']],
         [['fuck', 'idiot', 'kys'], ["Don't say like that!", "It's not nice", "Apologize!"]],
         [['apologise', 'apologize', 'sorry'], ["Don't worry!", "That's okay!"]],
     ]
@@ -158,7 +157,15 @@ class OutOfScopeAdapter(LogicAdapter):
         try:
             request = requests.post('http://127.0.0.1:5005/webhooks/rest/webhook',
                                     data=json.dumps(payload))
-            return request.json()[0]['text']
+
+            texts = []
+            for utterance in request.json():
+                texts.append(utterance['text'])
+
+            if len(texts) > 0:
+                return "\n".join(texts)
+            else:
+                return ""
         except Exception:
             return "rasa connection failed"
 

@@ -1,0 +1,24 @@
+nlu:
+  - synonym: PM
+    examples: |
+      - mobile
+      - programming
+      - mobile programming
+
+  - synonym: PJN
+    examples: |
+      - natural
+      - processing
+      - natural language processing
+      - language processing
+
+  - synonym: AJiO
+    examples: |
+      - algorithms
+      - languages and calculations
+      - calculations
+
+  - synonym: SM
+    examples: |
+      - diploma
+      - seminary

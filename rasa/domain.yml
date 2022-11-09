@@ -60,10 +60,10 @@ responses:
     - text: "7:30 - 9:45: PJN lecture (remote)\n10:00 - 12:15: AJiO lecture (remote)\n15:30 - 17:45: AJiO lab (remote)"
 
   utter_schedule_tuesday:
-    - text: "17:00-19:15: PM lab"
+    - text: "17:00 - 19:15: PM lab"
 
   utter_schedule_wednesday:
-    - text: "15:00-17:15: PJN lab"
+    - text: "15:00 - 17:15: PJN lab"
 
   utter_schedule_no_lectures:
     - text: "No lectures yay!"
