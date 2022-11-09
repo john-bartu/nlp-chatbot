@@ -115,6 +115,13 @@ nlu:
       - on [Saturday](day_of_week) what do i have?
       - on [Sunday](day_of_week) what do i have?
 
+  - intent: ask_route_for_day
+    examples: |
+      - what is the route for [Monday](day_of_week)?
+      - how do I get to PK on [Tuesday](day_of_week)?
+      - when do I depart on [Wednesday](day_of_week)?
+      - when is the bus on [Thursday](day_of_week)?
+
   - intent: location
     examples: |
       - [New Delhi](location)
@@ -139,3 +146,20 @@ nlu:
       - [Friday](day_of_week)
       - [Saturday](day_of_week)
       - [Sunday](day_of_week)
+
+  - intent: ask_subject
+    examples: |
+      - what is [PM](subject)?
+      - what does [SM](subject) stand for?
+      - what subject is [AJiO](subject)? 
+      - who teaches [PJN](subject)?
+      - what is [SM](subject)?
+      - what subject is [SM](subject)? 
+      - who teaches [SM](subject)?
+
+  - intent: subject
+    examples: |
+      - [PM](subject)
+      - [PJN](subject)
+      - [AJiO](subject)
+      - [SM](subject)

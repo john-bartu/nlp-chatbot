@@ -46,3 +46,13 @@ stories:
     steps:
       - intent: ask_schedule_for_day
       - action: action_get_schedule_for_day
+
+  - story: pk route
+    steps:
+      - intent: ask_route_for_day
+      - action: action_get_route_for_day
+
+  - story: pk subject
+    steps:
+      - intent: ask_subject
+      - action: action_get_subject_info
