@@ -50,7 +50,7 @@ responses:
   utter_schedule_monday:
     - text: "7:30-9:45: PJN lecture (remote)\n10:00-12:15: AJiO lecture (remote)\n15:30-17:45: AJiO lab (remote)"
 
-  utter_
+  utter_route_monday:
 
   utter_schedule_tuesday:
     - text: "17:00-19:15: PM lab"
