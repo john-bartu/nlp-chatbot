@@ -7,3 +7,5 @@ conversations:
     - "There is about 70°C on CPU and 50°C GPU. Thermally conductive paste: wet!"
   - - "The quick brown fox"
     - "jumps over the lazy dog!"
+  - - "How are you?"
+    - "System is up, running with no bugs."

@@ -74,7 +74,7 @@ while True:
         bot_response = chatbot.get_response(user_input)
 
         print(bot_response)
-        speak(str(bot_response))
+        # speak(str(bot_response))
     # Press ctrl-c or ctrl-d on the keyboard to exit
     except (KeyboardInterrupt, EOFError, SystemExit):
         break
